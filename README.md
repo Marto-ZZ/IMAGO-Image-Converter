@@ -49,6 +49,8 @@ gunicorn -w 4 -b 127.0.0.1:5000 app:app
 
 Abrí `index.html` en tu navegador directamente, o usá una extensión como **Live Server** en VS Code.
 
+---
+
 ## Cómo testear
 
 ```bash
