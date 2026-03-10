@@ -1,6 +1,6 @@
 # 🖼️ IMAGO — Image Convertor
 
-Proyecto portfolio: Herramienta web minimalista para convertir imágenes de forma rápida, con frontend en **HTML/CSS** y backend en **Python/Flask**.
+Proyecto portfolio: IMAGO es una herramienta web minimalista y eficiente diseñada para solucionar el problema de compatibilidad de los formatos de imagen modernos (como .webp). Permite convertir archivos entre múltiples formatos de forma instantánea, ofreciendo una vista previa en tiempo real antes de la descarga, con frontend en **HTML/JS/CSS** y backend en **Python/Flask**.
 
 ---
 
@@ -8,13 +8,15 @@ Proyecto portfolio: Herramienta web minimalista para convertir imágenes de form
 
 ```
 IMAGO - Image Convertor/
-├── app.py           ← Servidor Flask y manejo de rutas
-├── converter.py     ← Lógica de procesamiento de imágenes (Pillow)
-├── requirements.txt ← Dependencias del proyecto
+├── app.py             ← Servidor Flask y manejo de rutas
+├── converter.py       ← Lógica de procesamiento de imágenes (Pillow)
+├── test_converter.py  ← Suite case en Pytest
+├── requirements.txt   ← Dependencias del proyecto
 ├── static/          
-│   └── styles.css   ← Diseño visual, variables CSS y Grid
+│   └── styles.css     ← Diseño visual, variables CSS y Grid
+│   └── styles.css     ← Script interacción usuario-imágen-servidor
 └── templates/       
-    └── index.html   ← Interfaz de usuario y lógica para archivos
+    └── index.html     ← Interfaz de usuario
 ```
 
 ---
@@ -47,6 +49,12 @@ gunicorn -w 4 -b 127.0.0.1:5000 app:app
 
 Abrí `index.html` en tu navegador directamente, o usá una extensión como **Live Server** en VS Code.
 
+## Cómo testear
+
+```bash
+python app.py
+```
+
 ---
 
 ## Funcionalidades
@@ -55,10 +63,11 @@ Abrí `index.html` en tu navegador directamente, o usá una extensión como **Li
 - Interfaz Drag & Drop: zona interactiva para arrastrar archivos o seleccionar mediante click con feedback visual dinámico
 - Gestión Inteligente de Color: Conversión automática de canales alfa (transparencia) a color sólido al exportar a formatos que no soportan transparencia (como JPG), evitando errores de renderizado
 - Experiencia de Usuario: Descarga automática e inmediata del archivo procesado sin recargas de página
+- Soporte para GIF: Implementar la conversión de frames de video o ráfagas de imágenes a formato .gif
+- Versión 3.0 ahora permite la conversión y procesamiento de mas formatos de imágenes
 
 ## Funcionalidades a implementar
 
-- Soporte para GIF: Implementar la conversión de frames de video o ráfagas de imágenes a formato .gif
 - Modo Claro / Oscuro: Switch dinámico para cambiar la paleta de colores de la interfaz
 - Procesamiento por lotes: Permitir la subida de múltiples imágenes simultáneamente y descargarlas en un archivo .zip
 
@@ -68,9 +77,10 @@ Abrí `index.html` en tu navegador directamente, o usá una extensión como **Li
 
 | Capa      | Tecnología                        |
 |-----------|-----------------------------------|
-| Frontend  | HTML5, CSS3                       |
+| Frontend  | HTML5, CSS3, JavaScript           |
 | Backend   | Python 3, Flask                   |
 | Imagenes  | Pillow (PIL Fork)                 |
+| Testing   | Pytest                            |
 
 ## 📝 Notas de desarrollo
 
