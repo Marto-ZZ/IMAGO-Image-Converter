@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMAGO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+
+  <main class="container">
+
+    <header class="header">
+      <span class="badge" id="portfolio">PORTFOLIO PROJECT</span>
+      <span class="badge">By Martín Sogoloff</span>
+      
+      <h1 class="title">
+        <span class="title-line">IMAGO</span>
+        <span class="title-line accent">Format Converter</span>
+      </h1>
+      <p class="subtitle">Tired of the .webp format? Convert your image to the format you need, instantly, without worries.</p>
+    </header>
+
+    <form class="card" action="/convertir" method="POST" enctype="multipart/form-data">
+
+      <!-- Zona importar archivo -->
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <p class="dropzone-text">Drag your image here</p>
+        <p class="dropzone-sub">or click to select</p>
+        <input type="file" name="archivo_del_usuario" id="fileInput" accept="image/*" required>
+        <div class="file-name" id="fileName">No file selected</div>
+      </div>
+
+      <!-- Selector de formato de imagen -->
+      <div class="format-section">
+        <p class="format-label">Convert to</p>
+        <div class="format-options">
+          <label class="format-btn">
+            <input type="radio" name="formato_a_cambiar" value="png" checked>
+            <span>.PNG</span>
+          </label>
+          <label class="format-btn">
+            <input type="radio" name="formato_a_cambiar" value="jpg">
+            <span>.JPG</span>
+          </label>
+          <label class="format-btn">
+            <input type="radio" name="formato_a_cambiar" value="webp">
+            <span>.WEBP</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <span class="btn-text">Convert and Download</span>
+        <span class="btn-icon">↓</span>
+      </button>
+      <a href="https://en.wikipedia.org/wiki/File_format" id="references">
+        <p class="format-label">What is an image format?</p>
+      </a>
+    </form>
+
+  </main>
+
+  <script>
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('fileInput');
+    const fileName = document.getElementById('fileName');
+
+    dropzone.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length > 0) {
+        fileName.textContent = fileInput.files[0].name;
+        fileName.classList.add('has-file');
+        dropzone.classList.add('has-file');
+      }
+    });
+
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('dragging');
+    });
+
+    dropzone.addEventListener('dragleave', () => {
+      dropzone.classList.remove('dragging');
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('dragging');
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+        fileName.textContent = files[0].name;
+        fileName.classList.add('has-file');
+        dropzone.classList.add('has-file');
+      }
+    });
+  </script>
+
+</body>
+</html>
