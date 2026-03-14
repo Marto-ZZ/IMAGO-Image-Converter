@@ -2,6 +2,8 @@
 
 Proyecto portfolio: IMAGO es una herramienta web minimalista y eficiente diseñada para solucionar el problema de compatibilidad de los formatos de imagen modernos (como .webp). Permite convertir archivos entre múltiples formatos de forma instantánea, ofreciendo una vista previa en tiempo real antes de la descarga, con frontend en **HTML/JS/CSS** y backend en **Python/Flask**.
 
+![IMAGO preview](https://mir-s3-cdn-cf.behance.net/project_modules/fs/812e24245748697.69b4121a3f164.jpg)
+
 ---
 
 ## 📁 Estructura del proyecto
@@ -56,6 +58,14 @@ Abrí `index.html` en tu navegador directamente, o usá una extensión como **Li
 ```bash
 python app.py
 ```
+
+---
+
+## Screenshots
+
+| | |
+|:---:|:---:|
+| ![](https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/7a249f245748535.69b41180b9454.png) | ![](https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/167746245748535.69b41180b880b.png) |
 
 ---
 
