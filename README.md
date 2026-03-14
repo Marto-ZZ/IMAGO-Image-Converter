@@ -65,7 +65,7 @@ python app.py
 
 | | |
 |:---:|:---:|
-| ![](https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/7a249f245748535.69b41180b9454.png) | ![](https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/167746245748535.69b41180b880b.png) |
+| ![](https://mir-s3-cdn-cf.behance.net/project_modules/fs/de2f16245748697.69b4121a3fafb.png) | ![](https://mir-s3-cdn-cf.behance.net/project_modules/fs/3d831d245748697.69b4121a40b73.png) |
 
 ---
 
