@@ -1,4 +1,4 @@
-# 🖼️ IMAGO — Image Convertor
+# 🖼️ IMAGO - Image Converter & Compressor
 
 Proyecto portfolio: IMAGO es una herramienta web minimalista y eficiente diseñada para solucionar el problema de compatibilidad de los formatos de imagen modernos (como .webp). Permite convertir archivos entre múltiples formatos de forma instantánea, ofreciendo una vista previa en tiempo real antes de la descarga, con frontend en **HTML/JS/CSS** y backend en **Python/Flask**.
 
