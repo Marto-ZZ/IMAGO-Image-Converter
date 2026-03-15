@@ -10,15 +10,17 @@ Proyecto portfolio: IMAGO es una herramienta web minimalista y eficiente diseña
 
 ```
 IMAGO - Image Convertor/
-├── app.py             ← Servidor Flask y manejo de rutas
-├── converter.py       ← Lógica de procesamiento de imágenes (Pillow)
-├── test_converter.py  ← Suite case en Pytest
-├── requirements.txt   ← Dependencias del proyecto
+├── app.py                 ← Servidor Flask y manejo de rutas
+├── converter.py           ← Lógica de procesamiento de imágenes (Pillow)
+├── requirements.txt       ← Dependencias del proyecto
+├── confest.py             ← Vacío, hace que pytest encuentre la raíz
+├── tests/          
+│   └── test_converter.py  ← Suite case en Pytest
 ├── static/          
-│   └── styles.css     ← Diseño visual, variables CSS y Grid
-│   └── styles.css     ← Script interacción usuario-imágen-servidor
+│   └── styles.css         ← Diseño visual, variables CSS y Grid
+│   └── styles.css         ← Script interacción usuario-imágen-servidor
 └── templates/       
-    └── index.html     ← Interfaz de usuario
+    └── index.html         ← Interfaz de usuario
 ```
 
 ---
